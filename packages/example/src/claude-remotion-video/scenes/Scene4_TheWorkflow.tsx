@@ -6,7 +6,6 @@ import {
   fadeIn, slideUp, SlideReveal, ScaleFadeIn
 } from '../utils/animations';
 import {PrimaryGradientText, SecondaryGradientText} from '../components/GradientText';
-import {CodeBlock, TypingCodeBlock} from '../components/CodeBlock';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
 import {GlowingCard, FeatureCard} from '../components/GlowingCard';

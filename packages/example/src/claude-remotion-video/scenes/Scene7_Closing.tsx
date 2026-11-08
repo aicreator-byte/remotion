@@ -5,8 +5,7 @@ import {typography} from '../utils/typography';
 import {
   fadeIn, slideUp, SlideReveal, ScaleFadeIn, PulseGlow, FloatingElement
 } from '../utils/animations';
-import {PrimaryGradientText, SecondaryGradientText, AccentGradientText} from '../components/GradientText';
-import {CodeBlock} from '../components/CodeBlock';
+import {GradientText, PrimaryGradientText, SecondaryGradientText, AccentGradientText} from '../components/GradientText';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
 import {GlowingCard, FeatureCard, StatCard} from '../components/GlowingCard';
 import {AnimatedCounter} from '../components/AnimatedCounter';

@@ -7,7 +7,7 @@ import {
   easing, SlideReveal, ScaleFadeIn, TypewriterText, PulseGlow, FloatingElement
 } from '../utils/animations';
 import {GradientText, PrimaryGradientText} from '../components/GradientText';
-import {CodeBlock, TypingCodeBlock} from '../components/CodeBlock';
+import {SCENE1_HOOK_CODE_TERMINAL} from './Scene1CodeString';
 import {ChatBubble, StreamingChatBubble} from '../components/ChatBubble';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
 import {AnimatedCounter} from '../components/AnimatedCounter';
@@ -152,18 +152,9 @@ export const Scene1_Hook = ({startFrame = 0}: Scene1HookProps) => {
           gap: '24px',
           opacity: 0.4,
         }}>
-          <CodeBlock
-            code={`// Your idea
-const concept = "AI video tutorial";
-
-// Ask Claude
-const storyboard = await claude.generate(concept);
-
-// Generate Remotion code
-const components = await claude.toRemotion(storyboard);`}
-            language="typescript"
+          <Terminal
+            lines={SCENE1_HOOK_CODE_TERMINAL}
             startFrame={500}
-            duration={40}
             fontSize="11px"
           />
         </div>

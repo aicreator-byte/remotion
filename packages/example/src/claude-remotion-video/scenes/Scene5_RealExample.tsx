@@ -6,11 +6,10 @@ import {
   fadeIn, slideUp, SlideReveal, ScaleFadeIn
 } from '../utils/animations';
 import {PrimaryGradientText, SecondaryGradientText} from '../components/GradientText';
-import {CodeBlock, TypingCodeBlock} from '../components/CodeBlock';
+import {SCENE2_COMPOSITION_TERMINAL_LINES} from './Scene2CodeString';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
 import {GlowingCard, FeatureCard} from '../components/GlowingCard';
-import {SCENE2_COMPOSITION_TERMINAL_LINES} from './Scene2CodeString';
 import {AnimatedCounter} from '../components/AnimatedCounter';
 import {ProgressRing} from '../components/ProgressRing';
 

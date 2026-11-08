@@ -6,7 +6,7 @@ import {
   fadeIn, slideUp, SlideReveal, ScaleFadeIn, TypewriterText
 } from '../utils/animations';
 import {PrimaryGradientText, SecondaryGradientText} from '../components/GradientText';
-import {CodeBlock, TypingCodeBlock} from '../components/CodeBlock';
+import {SCENE3_CLAUDE_CODE_TERMINAL} from './Scene3CodeString';
 import {ChatBubble, StreamingChatBubble} from '../components/ChatBubble';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
@@ -152,26 +152,11 @@ export const Scene3_RoleOfClaude = ({startFrame = 0}: Scene3Props) => {
               Claude generate komponen Remotion:
             </p>
 
-            <TypingCodeBlock
-              code={`// Scene 1: Hook Component
-import { useCurrentFrame, interpolate } from 'remotion';
-
-export const Scene1_Hook = () => {
-  const frame = useCurrentFrame();
-  
-  const titleOpacity = interpolate(frame, [30, 80], [0, 1]);
-  const titleSlide = interpolate(frame, [30, 80], [50, 0]);
-  
-  return (
-    <div style={{opacity: titleOpacity, transform: \`translateY(\${titleSlide}px)\`}}>
-      <h1>CREATE VIDEOS WITH AI</h1>
-    </div>
-  );
-};`}
-              language="tsx"
-              startFrame={0}
-              charsPerFrame={5}
-            />
+            <Terminal
+                          lines={SCENE3_CLAUDE_CODE_TERMINAL}
+                          startFrame={0}
+                          fontSize="13px"
+                        />
           </div>
         </SlideReveal>
 
