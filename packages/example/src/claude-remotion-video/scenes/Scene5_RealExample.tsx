@@ -10,6 +10,7 @@ import {CodeBlock, TypingCodeBlock} from '../components/CodeBlock';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
 import {GlowingCard, FeatureCard} from '../components/GlowingCard';
+import {SCENE2_DISPLAY_CODE} from './Scene2CodeString';
 import {AnimatedCounter} from '../components/AnimatedCounter';
 import {ProgressRing} from '../components/ProgressRing';
 
@@ -140,52 +141,13 @@ export const Scene5_RealExample = ({startFrame = 0}: Scene5Props) => {
               <GlowingCard style={{padding: '24px'}}>
                 <div style={{...typography.caption, color: colors.textMuted, marginBottom: '16px'}}>CLAUDE OUTPUT: Scene2_WhatIsRemotion.tsx</div>
                 <CodeBlock
-                  code={`import { useCurrentFrame } from 'remotion';
-import { colors } from '../utils/colors';
-import { typography } from '../utils/typography';
-import { SlideReveal } from '../utils/animations';
-import { FeatureCard, GlowingCard } from '../components/GlowingCard';
-
-export const SCENE2_DURATION = 900;
-
-export const Scene2_WhatIsRemotion = ({startFrame = 0}) => {
-  const frame = useCurrentFrame();
-  const sceneFrame = frame - startFrame;
-  if (sceneFrame < 0 || sceneFrame > SCENE2_DURATION) return null;
-
-  return (
-    <div style={{width: 1920, height: 1080, ...}}>
-      <MeshGradient width={1920} height={1080} />
-      <ParticleBackground particleCount={30} ... />
-      
-      <div style={{padding: 80, ...}}>
-        <SlideReveal startFrame={0} ...>
-          <h2>Apa itu <PrimaryGradientText>Remotion</PrimaryGradientText>?</h2>
-        </SlideReveal>
-        <SlideReveal startFrame={150} ...>
-          <p>Remotion adalah framework...</p>
-        </SlideReveal>
-        <SlideReveal startFrame={300} ...>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)'}}>
-            <FeatureCard icon="📦" title="Composable" ... />
-            <FeatureCard icon="⏱️" title="Frame-Accurate" ... />
-            <FeatureCard icon="🔄" title="Programmatic" ... />
-            <FeatureCard icon="🎬" title="Production Ready" ... />
-          </div>
-        </SlideReveal>
-        <SlideReveal startFrame={550} ...>
-          <CodeBlock code={...} language="tsx" />
-        </SlideReveal>
-      </div>
-    </div>
-  );
-};`}
-                  language="tsx"
-                  startFrame={0}
-                  duration={0}
-                  fontSize="11px"
-                  highlightLines={[1, 2, 3, 15, 16, 24, 25, 34, 35, 44, 45, 54, 55]}
-                />
+                                  code={SCENE2_DISPLAY_CODE}
+                                  language="tsx"
+                                  startFrame={0}
+                                  duration={0}
+                                  fontSize="11px"
+                                  highlightLines={[1, 2, 3, 15, 16, 24, 25, 34, 35, 44, 45, 54, 55]}
+                                />
               </GlowingCard>
             </div>
 
