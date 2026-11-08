@@ -6,8 +6,7 @@ import {
   fadeIn, slideUp, SlideReveal, ScaleFadeIn
 } from '../utils/animations';
 import {PrimaryGradientText, SecondaryGradientText} from '../components/GradientText';
-import {CodeBlock} from '../components/CodeBlock';
-import {SCENE2_COMPOSITION_CODE} from './Scene2CodeString';
+import {SCENE2_COMPOSITION_TERMINAL_LINES} from './Scene2CodeString';
 import {ChatBubble} from '../components/ChatBubble';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
@@ -207,14 +206,18 @@ export const Scene2_WhatIsRemotion = ({startFrame = 0}: Scene2Props) => {
             <p style={{...typography.h4, color: colors.textSecondary, margin: '0 0 16px'}}>
               Contoh struktur composition Remotion:
             </p>
-            <CodeBlock
-                          code={SCENE2_COMPOSITION_CODE}
-                          language="tsx"
+            <SlideReveal startFrame={550} duration={50} direction="left">
+                      <div style={{marginTop: '56px', maxWidth: '900px'}}>
+                        <p style={{...typography.h4, color: colors.textSecondary, margin: '0 0 16px'}}>
+                          Contoh struktur composition Remotion:
+                        </p>
+                        <Terminal
+                          lines={SCENE2_COMPOSITION_TERMINAL_LINES}
                           startFrame={0}
-                          duration={0}
                           fontSize="13px"
-                          highlightLines={[3, 4, 12, 13, 21, 22]}
                         />
+                      </div>
+                    </SlideReveal>
           </div>
         </SlideReveal>
 

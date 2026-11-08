@@ -6,7 +6,7 @@ import {
   fadeIn, slideUp, SlideReveal, ScaleFadeIn
 } from '../utils/animations';
 import {PrimaryGradientText, SecondaryGradientText, AccentGradientText} from '../components/GradientText';
-import {CodeBlock, TypingCodeBlock} from '../components/CodeBlock';
+import {SCENE6_TIP_TERMINAL_LINES, SCENE6_TIPS} from './Scene6CodeString';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
 import {GlowingCard, FeatureCard} from '../components/GlowingCard';
@@ -27,20 +27,7 @@ export const Scene6_TipsAndTricks = ({startFrame = 0}: Scene6Props) => {
     return null;
   }
 
-  const tips = [
-    {number: 1, title: 'Gunakan clamp() untuk Typography Responsive', icon: '📐', color: colors.primary,
-     code: `fontSize: 'clamp(1.5rem, 4vw, 3rem)'`},
-    {number: 2, title: 'Interpolate untuk Animasi Smooth', icon: '📈', color: colors.secondary,
-     code: `const opacity = interpolate(frame, [0, 30], [0, 1])`},
-    {number: 3, title: 'Sequence untuk Timeline Complex', icon: '🎬', color: colors.accent,
-     code: `<Sequence from={0} duration={180}><SceneA /></Sequence>`},
-    {number: 4, title: 'Lazy Load Scene dengan Dynamic Import', icon: '⚡', color: colors.warning,
-     code: `lazyComponent={() => import('./HeavyScene')}`},
-    {number: 5, title: 'Debug dengan console.log di calculateMetadata', icon: '🔍', color: colors.primary,
-     code: `calculateMetadata: () => { console.log(props); return {...} }`},
-    {number: 6, title: 'GitHub Actions untuk Render Gratis', icon: '☁️', color: colors.secondary,
-     code: `uses: actions/checkout@v4\nrun: npx remotion render ...`},
-  ];
+  const tips = SCENE6_TIPS;
 
   return (
     <div
@@ -141,13 +128,10 @@ export const Scene6_TipsAndTricks = ({startFrame = 0}: Scene6Props) => {
                 <h3 style={{...typography.h3, margin: 0, color: colors.textPrimary, lineHeight: 1.3, fontSize: '22px'}}>
                   {tip.title}
                 </h3>
-                <CodeBlock
-                  code={tip.code}
-                  language="typescript"
+                <Terminal
+                  lines={SCENE6_TIP_TERMINAL_LINES.slice((tip.number - 1) * 3, tip.number * 3)}
                   startFrame={0}
-                  duration={0}
                   fontSize="12px"
-                  showLineNumbers={false}
                 />
               </GlowingCard>
             ))}

@@ -10,7 +10,7 @@ import {CodeBlock, TypingCodeBlock} from '../components/CodeBlock';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
 import {GlowingCard, FeatureCard} from '../components/GlowingCard';
-import {SCENE2_DISPLAY_CODE} from './Scene2CodeString';
+import {SCENE2_COMPOSITION_TERMINAL_LINES} from './Scene2CodeString';
 import {AnimatedCounter} from '../components/AnimatedCounter';
 import {ProgressRing} from '../components/ProgressRing';
 
@@ -140,14 +140,11 @@ export const Scene5_RealExample = ({startFrame = 0}: Scene5Props) => {
 
               <GlowingCard style={{padding: '24px'}}>
                 <div style={{...typography.caption, color: colors.textMuted, marginBottom: '16px'}}>CLAUDE OUTPUT: Scene2_WhatIsRemotion.tsx</div>
-                <CodeBlock
-                                  code={SCENE2_DISPLAY_CODE}
-                                  language="tsx"
-                                  startFrame={0}
-                                  duration={0}
-                                  fontSize="11px"
-                                  highlightLines={[1, 2, 3, 15, 16, 24, 25, 34, 35, 44, 45, 54, 55]}
-                                />
+                <Terminal
+                  lines={SCENE2_COMPOSITION_TERMINAL_LINES}
+                  startFrame={0}
+                  fontSize="11px"
+                />
               </GlowingCard>
             </div>
 
