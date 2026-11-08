@@ -16,6 +16,7 @@ import {
 } from './ActivityStressTest';
 import {UseanimatedEmojis} from './AnimatedEmojis';
 import {BarChart} from './BarChart';
+import {CaraBuatVideo, CARA_BUAT_VIDEO_DURATION} from './CaraBuatVideo';
 import BetaText, {betaTextSchema} from './BetaText';
 import {NativeBufferStateForImage} from './BufferState/Image';
 import {NativeBufferState} from './BufferState/Simple';
@@ -508,14 +509,22 @@ export const Index: React.FC = () => {
 				<WhatsNewRoot />
 			</Folder>
 			<Composition
-				id="AnimatedBarChart"
-				component={BarChart}
-				durationInFrames={180}
-				fps={30}
-				width={1280}
-				height={720}
-			/>
-			<Folder name="maptiler">
+								id="AnimatedBarChart"
+								component={BarChart}
+								durationInFrames={180}
+								fps={30}
+								width={1280}
+								height={720}
+							/>
+							<Composition
+								id="CaraBuatVideo"
+								component={CaraBuatVideo}
+								durationInFrames={CARA_BUAT_VIDEO_DURATION}
+								fps={30}
+								width={1920}
+								height={1080}
+							/>
+							<Folder name="maptiler">
 				<Composition
 					id="switzerland-map"
 					lazyComponent={() => import('./SwitzerlandMap/SwitzerlandMap')}
