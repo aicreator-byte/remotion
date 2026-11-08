@@ -51,7 +51,7 @@ jobs:
         run: |
           npx remotion render \
             src/entry.jsx \
-            centered-solid \
+            AnimatedBarChart \
             output.mp4 \
             --concurrency=4
         working-directory: ./packages/example
