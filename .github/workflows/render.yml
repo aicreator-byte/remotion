@@ -6,7 +6,7 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
 
     steps:
       - name: Checkout repository
@@ -47,11 +47,11 @@ jobs:
       - name: Build packages
         run: bun run build-fast
 
-      - name: Render CaraBuatVideo composition
+      - name: Render ClaudeRemotionVideo composition
         run: |
           npx remotion render \
             src/index.ts \
-            CaraBuatVideo \
+            ClaudeRemotionVideo \
             output.mp4 \
             --concurrency=4
         working-directory: ./packages/example
@@ -59,6 +59,6 @@ jobs:
       - name: Upload MP4 artifact
         uses: actions/upload-artifact@v4
         with:
-          name: cara-buat-video
+          name: claude-remotion-video
           path: packages/example/output.mp4
           retention-days: 7
