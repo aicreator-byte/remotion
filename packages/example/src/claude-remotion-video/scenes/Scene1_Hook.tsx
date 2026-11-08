@@ -9,6 +9,7 @@ import {
 import {GradientText, PrimaryGradientText} from '../components/GradientText';
 import {SCENE1_HOOK_CODE_TERMINAL} from './Scene1CodeString';
 import {ChatBubble, StreamingChatBubble} from '../components/ChatBubble';
+import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
 import {AnimatedCounter} from '../components/AnimatedCounter';
 import {GlowingCard, FeatureCard} from '../components/GlowingCard';
