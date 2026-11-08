@@ -52,8 +52,8 @@ export const GlowingCard = ({
         cursor: onClick ? 'pointer' : 'default',
         ...style,
       }}
-      onMouseEnter={onClick ? () => {}} // Placeholder for hover effects
-      onMouseLeave={onClick ? () => {}}
+      onMouseEnter={onClick ? () => {} : undefined}
+      onMouseLeave={onClick ? () => {} : undefined}
     >
       {children}
     </div>
