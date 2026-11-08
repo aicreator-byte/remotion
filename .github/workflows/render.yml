@@ -1,0 +1,66 @@
+name: Render test video
+
+on:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install system dependencies for Chromium
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 \
+            libnspr4 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libcups2 \
+            libdrm2 \
+            libxkbcommon0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2 \
+            libgbm1 \
+            libasound2 \
+            libatspi2.0-0 \
+            libxshmfence1 \
+            fonts-liberation \
+            libappindicator3-1 \
+            libgtk-3-0 \
+            xdg-utils
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages
+        run: npm run build-fast
+        working-directory: ./packages/example
+
+      - name: Render test composition
+        run: |
+          npx remotion render \
+            src/Root.tsx \
+            centered-solid \
+            output.mp4 \
+            --concurrency=4
+        working-directory: ./packages/example
+
+      - name: Upload MP4 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-video
+          path: packages/example/output.mp4
+          retention-days: 7
