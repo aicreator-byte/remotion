@@ -6,7 +6,7 @@ import {
   fadeIn, slideUp, SlideReveal, ScaleFadeIn
 } from '../utils/animations';
 import {PrimaryGradientText, SecondaryGradientText} from '../components/GradientText';
-import {SCENE2_COMPOSITION_TERMINAL_LINES} from './Scene2CodeString';
+import {SCENE2_COMPOSITION_TERMINAL_LINES, SCENE2_REACT_COMPONENT_LINES} from './Scene2CodeString';
 import {ChatBubble} from '../components/ChatBubble';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
@@ -232,16 +232,14 @@ export const Scene2_WhatIsRemotion = ({startFrame = 0}: Scene2Props) => {
             flexWrap: 'wrap',
           }}>
             {/* React code box */}
-            <GlowingCard style={{padding: '32px', minWidth: '300px', maxWidth: '400px'}}>
-              <div style={{...typography.caption, color: colors.textMuted, marginBottom: '16px'}}>REACT COMPONENT</div>
-              <pre style={{margin: 0, fontFamily: typography.fontFamilies.mono, fontSize: '13px', lineHeight: '1.8', color: colors.textPrimary}}>
-                <span style={{color: colors.primary}}>export</span> <span style={{color: colors.secondary}}>const</span> Title = () => (
-  <span style={{color: colors.accent}}><div</span> <span style={{color: colors.secondary}}>className</span>=<span style={{color: colors.warning}}>"title"</span><span style={{color: colors.accent}}>></span>
-    Hello Remotion!
-  <span style={{color: colors.accent}}></div></span>
-);
-              </pre>
-            </GlowingCard>
+                        <GlowingCard style={{padding: '32px', minWidth: '300px', maxWidth: '400px'}}>
+                          <div style={{...typography.caption, color: colors.textMuted, marginBottom: '16px'}}>REACT COMPONENT</div>
+                          <Terminal
+                            lines={SCENE2_REACT_COMPONENT_LINES}
+                            startFrame={0}
+                            fontSize="13px"
+                          />
+                        </GlowingCard>
 
             {/* Arrow */}
             <div style={{

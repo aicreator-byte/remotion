@@ -49,14 +49,19 @@ export const Scene7_Closing = ({startFrame = 0}: Scene7Props) => {
         connectDistance={150}
       />
       <FloatingShapes
-        count={20}
-        width={1920}
-        height={1080}
-        colors={[colors.primary, colors.secondary, colors.accent, colors.warning}]
-        minSize={20}
-        maxSize={100}
-        speed={0.1}
-      />
+              count={20}
+              width={1920}
+              height={1080}
+              colors={[
+                colors.primary,
+                colors.secondary,
+                colors.accent,
+                colors.warning,
+              ]}
+              minSize={20}
+              maxSize={100}
+              speed={0.1}
+            />
       <NoiseOverlay width={1920} height={1080} opacity={0.02} />
 
       <div style={{position: 'relative', zIndex: 10, width: '100%', height: '100%', padding: '80px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>

@@ -3,7 +3,7 @@
 export const SCENE2_COMPOSITION_TERMINAL_LINES = [
   {type: 'output' as const, content: '// Remotion Composition Structure', delay: 0},
   {type: 'output' as const, content: 'import { Composition, Sequence } from', delay: 10},
-  {type: 'output' as const, content: '\'remotion\';', delay: 10},
+  {type: 'output' as const, content: "'remotion';", delay: 10},
   {type: 'output' as const, content: '', delay: 10},
   {type: 'output' as const, content: 'export const MyVideo = () => (', delay: 20},
   {type: 'output' as const, content: '  <>', delay: 20},
@@ -33,6 +33,16 @@ export const SCENE2_COMPOSITION_TERMINAL_LINES = [
   {type: 'output' as const, content: '    />', delay: 20},
   {type: 'output' as const, content: '  </>', delay: 20},
   {type: 'output' as const, content: ');', delay: 20},
+];
+
+// React component code example for visual demo
+export const SCENE2_REACT_COMPONENT_LINES = [
+  {type: 'output' as const, content: '// React Component to Video Frame', delay: 0},
+  {type: 'output' as const, content: 'export const Title = () => (', delay: 10},
+  {type: 'output' as const, content: '  <div className="title">', delay: 10},
+  {type: 'output' as const, content: '    Hello Remotion!', delay: 10},
+  {type: 'output' as const, content: '  </div>', delay: 10},
+  {type: 'output' as const, content: ');', delay: 10},
 ];
 
 export const SCENE2_DISPLAY_CODE = `import { Composition, Sequence } from 'remotion';
