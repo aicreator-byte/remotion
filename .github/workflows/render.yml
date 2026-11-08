@@ -50,7 +50,7 @@ jobs:
       - name: Render test composition
         run: |
           npx remotion render \
-            src/Root.tsx \
+            src/entry.jsx \
             centered-solid \
             output.mp4 \
             --concurrency=4
