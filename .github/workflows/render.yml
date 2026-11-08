@@ -12,11 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: '20'
-          cache: 'npm'
+          bun-version: '1.4.3'
 
       - name: Install system dependencies for Chromium
         run: |
@@ -43,10 +42,10 @@ jobs:
             xdg-utils
 
       - name: Install dependencies
-        run: npm ci
+        run: bun install
 
       - name: Build packages
-        run: npm run build-fast
+        run: bun run build-fast
         working-directory: ./packages/example
 
       - name: Render test composition
