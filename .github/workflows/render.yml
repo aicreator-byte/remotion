@@ -50,7 +50,7 @@ jobs:
       - name: Render test composition
         run: |
           npx remotion render \
-            src/entry.jsx \
+            src/index.ts \
             AnimatedBarChart \
             output.mp4 \
             --concurrency=4
