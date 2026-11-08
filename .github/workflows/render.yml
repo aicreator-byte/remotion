@@ -46,7 +46,6 @@ jobs:
 
       - name: Build packages
         run: bun run build-fast
-        working-directory: ./packages/example
 
       - name: Render test composition
         run: |
