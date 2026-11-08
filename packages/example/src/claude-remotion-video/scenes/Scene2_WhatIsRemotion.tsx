@@ -7,6 +7,7 @@ import {
 } from '../utils/animations';
 import {PrimaryGradientText, SecondaryGradientText} from '../components/GradientText';
 import {CodeBlock} from '../components/CodeBlock';
+import {SCENE2_COMPOSITION_CODE} from './Scene2CodeString';
 import {ChatBubble} from '../components/ChatBubble';
 import {Terminal} from '../components/Terminal';
 import {ParticleBackground, FloatingShapes, MeshGradient, NoiseOverlay} from '../components/ParticleBackground';
@@ -207,42 +208,13 @@ export const Scene2_WhatIsRemotion = ({startFrame = 0}: Scene2Props) => {
               Contoh struktur composition Remotion:
             </p>
             <CodeBlock
-              code={`import { Composition, Sequence } from 'remotion';
-
-export const MyVideo = () => (
-  <>
-    <Composition
-      id="intro"
-      component={IntroScene}
-      durationInFrames={180}
-      fps={30}
-      width={1920}
-      height={1080}
-    />
-    <Composition
-      id="main"
-      component={MainScene}
-      durationInFrames={540}
-      fps={30}
-      width={1920}
-      height={1080}
-    />
-    <Composition
-      id="outro"
-      component={OutroScene}
-      durationInFrames={120}
-      fps={30}
-      width={1920}
-      height={1080}
-    />
-  </>
-);`}
-              language="tsx"
-              startFrame={0}
-              duration={0}
-              fontSize="13px"
-              highlightLines={[3, 4, 12, 13, 21, 22]}
-            />
+                          code={SCENE2_COMPOSITION_CODE}
+                          language="tsx"
+                          startFrame={0}
+                          duration={0}
+                          fontSize="13px"
+                          highlightLines={[3, 4, 12, 13, 21, 22]}
+                        />
           </div>
         </SlideReveal>
 
